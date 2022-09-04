@@ -1,0 +1,32 @@
+{
+  "name": "estanto-scrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run format && npm run tsc && npm run ncc",
+    "format": "npx prettier --write -l .",
+    "tsc": "tsc",
+    "ncc": "ncc build ./build/scrapper/main.js -o netlify/functions/bcv-scrapper && ncc build ./build/api/getStoredBcvReference.js -o netlify/functions/bcv-reference && ncc build ./build/api/vesFiatConverter.js -o netlify/functions/ves-fiat-converter",
+    "dev": "netlify.cmd dev"
+  },
+  "keywords": [],
+  "author": "Jesus Rodriguez",
+  "license": "MIT",
+  "dependencies": {
+    "@netlify/functions": "^1.2.0",
+    "@supabase/supabase-js": "^1.35.6",
+    "dotenv": "^16.0.2",
+    "got": "^12.4.1",
+    "jsdom": "^20.0.0"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "@vercel/ncc": "^0.34.0",
+    "eslint": "^8.23.0",
+    "prettier": "2.7.1",
+    "typescript": "^4.8.2"
+  }
+}
