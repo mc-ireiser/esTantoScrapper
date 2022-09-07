@@ -1,0 +1,2 @@
+[functions."bcv-scrapper"]
+schedule = "@hourly"
